@@ -1,0 +1,1 @@
+(self.webpackChunkphoto_script=self.webpackChunkphoto_script||[]).push([[273],{273:(e,t,l)=>{"use strict";l.r(t),l.d(t,{default:()=>n});var c=l(294);const n=()=>c.createElement(c.Fragment,null,c.createElement("input",{type:"button",value:"+",onClick:()=>console.log("click+")}),c.createElement("input",{type:"button",value:"-",onClick:()=>console.log("click-")}))}}]);

@@ -1,0 +1,65 @@
+#draggable-enabled {
+  position: absolute;
+  z-index: 9;
+}
+#draggable > .title {
+  cursor: move;
+  z-index: 10;
+}
+#draggable-enabled > .title {
+  cursor: move;
+  z-index: 10;
+}
+.gridSave {
+  display: grid;
+  grid-template-areas: "format quality save";
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  grid-area: opt;
+}
+.format {
+  grid-area: format;
+}
+.quality {
+  grid-area: quality;
+}
+.save {
+  grid-area: save;
+}
+.filtersDrag > label:hover {
+  cursor: pointer;
+}
+
+form#form-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 1fr) 4fr 1fr;
+  grid-template-areas:
+    "file . opt opt opt . prev"
+    ". img img img img img ."
+    "filters img img img img img layer"
+    ". . . . . . .";
+  height: 98vh;
+  justify-items: center;
+  align-items: center;
+}
+
+.widget {
+  grid-area: filters;
+}
+.layers {
+  grid-area: layer;
+}
+#imgContainer {
+  grid-area: img;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+input[type="file"] {
+  grid-area: file;
+}
+#imgSrc{
+  position: relative;
+}
