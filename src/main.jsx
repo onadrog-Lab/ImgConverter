@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState } from "react";
+import React, { lazy, Suspense, useState, StrictMode } from "react";
 import { render } from "react-dom";
 import "./App.css";
 const Layers = lazy(() => import("./Components/Layers"));
@@ -17,7 +17,7 @@ const ImageInput = () => {
   };
 
   return (
-    <>
+    <StrictMode>
       <Suspense fallback={<div>Loading ...</div>}>
         <form id="form-grid">
           <input
@@ -26,9 +26,8 @@ const ImageInput = () => {
             type="file"
             multiple={false}
             onChange={(e) =>
-              import("./utils/modifier").then((module) =>
-              {
-                console.log(module)
+              import("./utils/modifier").then((module) => {
+                console.log(module);
                 module.modifier(e.target.files[0]);
               })
             }
@@ -77,10 +76,8 @@ const ImageInput = () => {
           </div>
         </form>
       </Suspense>
-    </>
+    </StrictMode>
   );
 };
-
-//export default ImageInput
 
 render(<ImageInput />, document.getElementById("root"));
